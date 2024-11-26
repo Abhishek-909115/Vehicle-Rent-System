@@ -1,0 +1,121 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: url('../User/image3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #28a745; /* Set green color */
+}
+
+/* Vehicle Card Styling */
+.vehicle-selection-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vehicle-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.vehicle-card {
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+    border: 2px solid #e0e4e8;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vehicle-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #28a745; /* Green hover border color */
+}
+
+/* Hide the radio input */
+.vehicle-card input[type="radio"] {
+    display: none;
+}
+
+/* Style the label */
+.vehicle-card label {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    border: 2px solid #e0e4e8;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* When the radio is checked, style the label */
+.vehicle-card input[type="radio"]:checked + label {
+    border-color: #28a745 !important; /* Ensure green border when selected */
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5) !important; /* Green glow around the selected label */
+}
+
+/* Remove hover effect if selected */
+.vehicle-card input[type="radio"]:checked + label:hover {
+    border-color: #28a745 !important; /* Green border */
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5) !important; /* Green glow */
+}
+
+/* Additional text styling for vehicle info */
+.vehicle-card h3,
+.vehicle-card p {
+    margin: 5px 0;
+}
+
+/* Button Styling */
+.submit-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #28a745; /* Green button background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 0.5; /* Initially disabled */
+    pointer-events: none; /* Initially disabled */
+}
+
+/* Enable the button when a vehicle is selected */
+.vehicle-selection-form input[type="radio"]:checked ~ .submit-button {
+    opacity: 1; /* Make button visible */
+    pointer-events: auto; /* Enable the button */
+}
+
+.submit-button:hover {
+    background-color: #218838;/* Darker green on hover */
+}
